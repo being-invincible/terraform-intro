@@ -10,9 +10,7 @@ This repository contains resources and examples for learning Terraform, an Infra
 - Basic understanding of Terraform concepts
 
 ### Step 1 - Setup a service account in the cloud
-In my case, I am setting up a GCP service acount for a demo project scope. Generate keys for auth.
-
-Make the folder structure for saving the json keys.
+In my case, I am setting up a GCP service acount for a demo project scope. Generate keys for auth and make the folder structure for saving the JSON keys.
 ![image](https://github.com/user-attachments/assets/123c5d0b-4d4b-41ad-b5b5-35466e09aec2)
 
 
