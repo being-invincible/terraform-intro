@@ -46,11 +46,10 @@ terraform destroy
 
 
 ## Usage
-Follow the examples in each directory to learn different Terraform concepts.
+Feel free to use this code to create/destroy a GCP bucket with Terraform, a really powerful way to do it. Also learn more about it using the resources below. 
 
 ## Resources
 - [Terraform Documentation](https://www.terraform.io/docs)
 - [AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+- [GCP Provider Documentation](https://registry.terraform.io/providers/hashicorp/google/latest/docs)
+- [GCP Cloud Storage Bucket](https://registry.terraform.io/providers/wiardvanrij/ipv4google/latest/docs/resources/storage_bucket#example-usage---creating-a-private-bucket-in-standard-storage-in-the-eu-region-bucket-configured-as-static-website-and-cors-configurations)
