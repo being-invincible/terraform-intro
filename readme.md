@@ -13,6 +13,8 @@ This repository contains resources and examples for learning Terraform, an Infra
 In my case, I am setting up a GCP service acount for a demo project scope. Generate keys for auth.
 
 Make the folder structure for saving the json keys.
+![image](https://github.com/user-attachments/assets/123c5d0b-4d4b-41ad-b5b5-35466e09aec2)
+
 
 Use this in your commandline to provide the keys
 ```bash
