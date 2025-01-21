@@ -48,7 +48,7 @@ terraform destroy
 Feel free to use this code to create/destroy a GCP bucket with Terraform, a really powerful way to do it. Also learn more about it using the resources below. 
 
 ## Extras
-If possible try variables in terraform. Create a variable to pass the dataset name to the main.tf file.
+If possible try variables in Terraform. Create a few variables inside variable.tf to pass the dataset name to the main.tf file. After defining them, you can just call them in your main.tf file using var.<variale_name> cmd.
 
 ```tf
 variable "location" {
