@@ -72,6 +72,31 @@ variable "gcs_storage_class" {
 }
 ```
 
+You can also try unsetting the cred with this cmd below and try adding the creds to the variable file for more diversity.
+```bash
+unset GOOGLE_CREDENTIALS
+```
+
+Modify it like this in the variable file.
+```tf
+variable "credentials" {
+  description = "GCP credentials"
+  default = "./my_keys/my_creds.json"
+}
+```
+
+call the file function in the main file
+```tf
+provider "google" {
+  # Configuration options
+  project     = var.project
+  region      = var.region
+  credentials = file(var.credentials)
+}
+```
+
+Try planning and applying them with Terraform. Enjoy Learning! Cheers!
+
 ## Resources
 - [Terraform Documentation](https://www.terraform.io/docs)
 - [AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
