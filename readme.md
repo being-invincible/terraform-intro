@@ -44,9 +44,11 @@ terraform apply
 terraform destroy
 ```
 
-
 ## Usage
 Feel free to use this code to create/destroy a GCP bucket with Terraform, a really powerful way to do it. Also learn more about it using the resources below. 
+
+## Extras
+If possible try variables in terraform. Create a variable to pass the dataset name to the main.tf file.
 
 ## Resources
 - [Terraform Documentation](https://www.terraform.io/docs)
