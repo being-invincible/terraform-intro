@@ -10,9 +10,9 @@ This repository contains resources and examples for learning Terraform, an Infra
 - Basic understanding of Terraform concepts
 
 ### Step 1 - Setup a service account in the cloud
-In my case, I am setting up a GCP service acount for a demo project scope. Generate keys for auth.
+In my case, I am setting up a GCP service acount for a demo project scope. Generate keys for auth and make the folder structure for saving the JSON keys.
+![image](https://github.com/user-attachments/assets/123c5d0b-4d4b-41ad-b5b5-35466e09aec2)
 
-Make the folder structure for saving the json keys.
 
 Use this in your commandline to provide the keys
 ```bash
@@ -44,13 +44,61 @@ terraform apply
 terraform destroy
 ```
 
-
 ## Usage
-Follow the examples in each directory to learn different Terraform concepts.
+Feel free to use this code to create/destroy a GCP bucket with Terraform, a really powerful way to do it. Also learn more about it using the resources below. 
+
+## Extras
+If possible try variables in Terraform. Create a few variables inside variable.tf to pass the dataset name to the main.tf file. After defining them, you can just call them in your main.tf file using var.<variale_name> cmd.
+
+```tf
+variable "location" {
+  description = "Project location"
+  default = "US"
+}
+
+variable "bq_dataset_name" {
+  description = "My BigQuery dataset name"
+  default = "demo_dataset"
+}
+
+variable "gcs_bucket_name" {
+    description = "The name of my bucket"
+    default = "valiant-airlock-448314-t1-terraform-demo"
+}
+
+variable "gcs_storage_class" {
+    description = "The storage class of the bucket"
+    default = "STANDARD"
+}
+```
+
+You can also try unsetting the cred with this cmd below and try adding the creds to the variable file for more diversity.
+```bash
+unset GOOGLE_CREDENTIALS
+```
+
+Modify it like this in the variable file.
+```tf
+variable "credentials" {
+  description = "GCP credentials"
+  default = "./my_keys/my_creds.json"
+}
+```
+
+call the file function in the main file
+```tf
+provider "google" {
+  # Configuration options
+  project     = var.project
+  region      = var.region
+  credentials = file(var.credentials)
+}
+```
+
+Try planning and applying them with Terraform. Enjoy Learning! Cheers!
 
 ## Resources
 - [Terraform Documentation](https://www.terraform.io/docs)
 - [AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+- [GCP Provider Documentation](https://registry.terraform.io/providers/hashicorp/google/latest/docs)
+- [GCP Cloud Storage Bucket](https://registry.terraform.io/providers/wiardvanrij/ipv4google/latest/docs/resources/storage_bucket#example-usage---creating-a-private-bucket-in-standard-storage-in-the-eu-region-bucket-configured-as-static-website-and-cors-configurations)
